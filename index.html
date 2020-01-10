@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bezier Tutorial</title>
+  </head>
+  <body>
+    <h1>Bezier Tutorial</h1>
+
+    Bezier elements provide an alternative way to represent polynomial
+    functions that provides a number of benefits to more traditional
+    power series or Taylor series representations.
+
+    Bezier elements are typically used in computer graphics and
+    computer-aided geometry design applications due to their favorable
+    mathematical properties and stable numerical evaluation.
+    <ul>
+      <li>When Bezier element is evaluated with parameters in the
+        range of
+        <math>
+          <mfenced open='[' close=']'>
+            <mn>0</mn><mn>1</mn>
+          </mfenced>
+        </math>
+        the resulting point is guarenteed to be contained within the
+        the polygon / polyhedron defined by the convex hull of its
+        control points.</li>
+      <li>The deCasteljau algorithm provides a fast, recursive, means
+        to evaluate the Bezier element that is very robust against
+        numerical errors such as those caused by catastropic
+        cancellation (due to finite floating point precision).</li>
+    </ul>
+    <h2>Definition</h2>
+
+    A Bezier element is essentially an
+    <math><msup><mi>p</mi>th</msup></math> order polynomial of
+    <math><mi>n</mi></math> independent variables. Like all
+    polynomaials, they can be expressed as a linear combinations of
+    basis functions. For Bezier elements, the basis functions are the
+    <a href="http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node9.html">
+      Bernstein polynomials
+    </a>.
+    <p align="center">
+      <math xmlns = "http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mrow>
+            <msubsup>
+              <mi>B</mi> <mi>k</mi> <mi>p</mi>
+            </msubsup>
+            <mfenced>
+              <mi>u</mi>
+            </mfenced>
+          </mrow>
+          <mo>=</mo>
+          <mfenced separators=''>
+            <mtable>
+              <mtr><mtd><mi>p</mi></mtd></mtr>
+              <mtr><mtd><mi>k</mi></mtd></mtr>
+            </mtable>
+          </mfenced>
+          <msup>
+            <mi>u</mi> <mi>k</mi>
+          </msup>
+          <msup>
+            <mfenced separators=''>
+              <mn>1</mn> <mo>-</mo> <mi>u</mi>
+            </mfenced>
+            <mfenced separators=''>
+              <mi>p</mi> <mo>-</mo> <mi>k</mi>
+            </mfenced>
+        </mrow>
+      </math>
+    </p>
+  </body>
+</html>
